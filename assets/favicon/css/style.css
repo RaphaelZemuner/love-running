@@ -45,10 +45,22 @@ nav {
     box-shadow: 0 2px 2px #3a3a3a ;
     left: 0;
     display: none;
+    top: 100%;
 }
 
+/* Nav Toggle */
+#nav-toggle:checked~nav {
+    display: block;
 
+}
 
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
+}
 
 /* Header */
 header {
@@ -58,6 +70,9 @@ header {
     z-index: 99;
     width: 100%;
     box-shadow: 0 2px 2px #3a3a3a ;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     
 }
 
@@ -80,9 +95,35 @@ main {
     background-color: lightblue;
     /* Make main element take any surplus space to push the footer down */
     flex: 1 0 auto;
+    margin-top: 47px;
 }
 
 /* Footer */
 footer {
     background-color: orange;
 }
+
+/* Media query tablets and larger  (768px) */
+@media screen and (min-width: 768px) {
+    /* Header */
+    nav {
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+
+    #menu {
+        display: flex  
+    }
+
+    #menu > li {
+        padding-left: 1rem;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+}
+    
